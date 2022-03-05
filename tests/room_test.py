@@ -38,9 +38,9 @@ class TestRoom(unittest.TestCase):
         result = self.room1.is_guest_checked_in(self.guest1)
         self.assertEqual(result, True)
 
-    # def test_guest_not_checked_in(self):
-    #     result = self.room2.is_guest_checked_in(self.guest1)
-    #     self.assertEqual(result, False)
+    def test_guest_not_checked_in(self):
+        result = self.room2.is_guest_checked_in(self.guest1)
+        self.assertEqual(result, False)
 
     # def test_is_room_name_unique(self):
     #     new_name = self.room.is_room_name_unique(self.new_possible_name)
