@@ -30,18 +30,31 @@ class TestRoom(unittest.TestCase):
     def test_room_has_empty_list_of_songs(self):
         self.assertEqual([], self.room1.list_of_songs)
 
-    # def test_check_in_a_guest(self):
-    #     result = self.room1.check_in_a_guest(self.guest1)
-    #     self.assertEqual([self.guest1], result)
-    
-    def test_guest_checked_in(self):
+    def test_is_guest_checked_in(self):
         result = self.room1.is_guest_checked_in(self.guest1)
         self.assertEqual(result, True)
 
-    def test_guest_not_checked_in(self):
+    def test_is_guest_not_checked_in(self):
         result = self.room2.is_guest_checked_in(self.guest1)
         self.assertEqual(result, False)
 
+    def test_check_in_a_guest(self):
+        self.room2.check_in_a_guest(self.guest1)
+        self.assertEqual([self.guest1], self.room2.list_of_guests)
+    
+    def test_check_out_a_guest(self):
+        self.room1.check_out_a_guest(self.guest1)
+        self.assertEqual([], self.room1.list_of_guests)
+
+    def test_check_out_a_guest_not_possible(self):
+        self.room1.check_out_a_guest(self.guest2)
+        self.assertEqual([self.guest1], self.room1.list_of_guests)
+    
+    
+    # def test_is_song_alreday_added(self):
+    #     pass
+
+    
     # def test_is_room_name_unique(self):
     #     new_name = self.room.is_room_name_unique(self.new_possible_name)
     #     self.assertEqual(True, new_name)

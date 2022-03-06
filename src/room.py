@@ -20,11 +20,15 @@ class Room:
                 return True
         return False
     
-    # def check_in_a_guest(self, guest):
-    #     self.list_of_guests.append(guest)
+    def check_in_a_guest(self, guest):
+        if not self.is_guest_checked_in(self):
+            self.list_of_guests.append(guest)
 
     def check_out_a_guest(self, guest):
-        pass
+        if guest in self.list_of_guests:
+            self.list_of_guests.remove(guest)
+        else:
+            self.list_of_guests
 
     def add_song(self, song):
         pass
