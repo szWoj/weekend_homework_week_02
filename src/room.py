@@ -38,4 +38,5 @@ class Room:
         return False
     
     def add_song(self, song):
-        pass
+        if not self.is_song_aleday_added(self):
+            self.list_of_songs.append(song)
