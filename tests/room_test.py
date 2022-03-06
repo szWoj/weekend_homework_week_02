@@ -61,16 +61,3 @@ class TestRoom(unittest.TestCase):
     def test_add_song(self):
         self.room1.add_song(self.song1)
         self.assertEqual([self.song1], self.room1.list_of_songs)
-
-    
-    # def test_is_room_name_unique(self):
-    #     new_name = self.room.is_room_name_unique(self.new_possible_name)
-    #     self.assertEqual(True, new_name)
-    
-    # def test_is_room_name_unique_fail(self):
-    #     new_name = self.room.is_room_name_unique(self.new_possible_name_fail)
-    #     self.assertEqual(False, new_name)
-    
-    # def test_room_has_been_created(self):
-    #     result = self.room.create_a_room(room_name)
-    #     self.assertEqual(result, Room(str(room_name)))
