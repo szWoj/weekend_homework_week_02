@@ -30,5 +30,12 @@ class Room:
         else:
             self.list_of_guests
 
+    
+    def is_song_aleday_added(self, new_song):
+        for song in self.list_of_songs:
+            if new_song.name ==song.name:
+                return True
+        return False
+    
     def add_song(self, song):
         pass

@@ -13,13 +13,11 @@ class TestRoom(unittest.TestCase):
         self.guest2 = Guest("Sebastian Wojdyla")
         
         self.song1 = Song("Yellow Submarine")
-        self.song1 = Song("Yellow Submarine")
-        self.room1.list_of_guests = [self.guest1]
-        self.room2.list_of_guests = []
         
-        #self.new_possible_name = "My new room"
-        #self.new_possible_name_fail = "Room Michael"
-        #self.list_of_created_rooms = [self.room]
+        self.room1.list_of_guests = [self.guest1]
+        self.room2.list_of_songs = [self.song1]
+        
+        
 
     def test_room_has_name(self):
         self.assertEqual("Room Michael", self.room1.name)
@@ -51,8 +49,14 @@ class TestRoom(unittest.TestCase):
         self.assertEqual([self.guest1], self.room1.list_of_guests)
     
     
-    # def test_is_song_alreday_added(self):
-    #     pass
+    def test_is_song_alreday_added_false(self):
+        result = self.room1.is_song_aleday_added(self.song1)
+        self.assertEqual(result, False)
+
+    def test_is_song_alreday_added_true(self):
+        result = self.room2.is_song_aleday_added(self.song1)
+        self.assertEqual(result, True)
+        
 
     
     # def test_is_room_name_unique(self):
